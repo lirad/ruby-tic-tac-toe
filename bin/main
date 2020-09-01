@@ -36,7 +36,7 @@ until game_over
   display_board
   # check if the game is complete
   # return a winner
-  
+
   # else
   # next
 
