@@ -36,10 +36,8 @@ until game_over
   display_board
   # check if the game is complete
   # return a winner
-
   # else
   # next
-
   # get the player2 move
   puts "#{player2}, choose a position"
   player2_position = gets.chomp
