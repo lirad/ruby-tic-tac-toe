@@ -5,20 +5,29 @@ class Players
   @@token = nil
   @@name = Hash.new
   
-  def initialize(name, token)
+  def initialize
+    player_name
     player_position = @@name.length
-    @@name[player_position] = name
-    
-    if validate_token?(token)
-      @@token = token.capitalize
-      p "#{token}, Nice choice!"
-    else   
-      p "Invalid token, please choose X or O"
-    end
+    validate_token?
   end
-
-  def validate_token?(token)
-    @@token_array.any?(token)
+  def player_name
+    p "Hey player, whats your name?"
+    @@name = gets.chomp
+    p "hello #{@@name}, Please select a token (x / o)"    
+  end
+  def validate_token?
+    token = gets.chomp
+    correct = false
+    unless correct == true
+    if @@token_array.any?(token)
+        @@token = token.capitalize
+        p "#{@@token}, Nice choice!"
+        correct = true
+    else   
+        p "Invalid token, please choose X or O"
+        validate_token?
+    end
+    end
   end  
 
   def display
@@ -26,23 +35,12 @@ class Players
   end  
 
 end
+# get player1 name and token
+player1 = Players.new
+# get player2 name and token
+player2 = Players.new
 
 
-p 'Hey player1, whats your name?'
-player1_name = gets.chomp
-p "hello #{player1_name}, Please select a token (x / o)"
-# get the player1 token (x / o)
-player1_token = gets.chomp
-
-player1 = Players.new(player1_name, player1_token)
-
-# player1.display
-
-# # get the player2 name
-# p 'Hey player2, whats your name?'
-# player2 = gets.chomp
-
-
-
+p player1 , player2
 
 
