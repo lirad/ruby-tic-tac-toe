@@ -1,46 +1,52 @@
 #!/usr/bin/env ruby
 
 class Players
-  @@token_array = ['x', 'X', 'o', 'O']
+  @@token_array = %w[x X o O]
   @@token = nil
-  @@name = Hash.new
-  
+  @@name = {}
+
   def initialize
     player_name
     player_position = @@name.length
-    validate_token?
+    player_token
   end
+
   def player_name
-    p "Hey player, whats your name?"
-    @@name = gets.chomp
-    p "hello #{@@name}, Please select a token (x / o)"    
+    p 'Hey player, whats your name?'
+    name = gets.chomp
+    if @@name.length == 0 
+      
+    else 
+    
+    end   
+    @@name = name
   end
-  def validate_token?
+
+  def player_token
+    p "Hello #{@@name}, Please select a token X or O"
     token = gets.chomp
+    return @@token = token if validate_token?(token)
+  end
+
+  def validate_token?(token = nil)
     correct = false
-    unless correct == true
+    return if correct == true
     if @@token_array.any?(token)
-        @@token = token.capitalize
-        p "#{@@token}, Nice choice!"
-        correct = true
-    else   
-        p "Invalid token, please choose X or O"
-        validate_token?
-    end
-    end
-  end  
+      @@token = token.capitalize
+      p "#{@@token}, Nice choice!"
+    else
+      p 'Invalid token, please choose X or O'
+      player_token
+    end  
+  end
 
   def display
     puts "#{@@name} and #{@@token} "
-  end  
-
+  end
 end
 # get player1 name and token
 player1 = Players.new
 # get player2 name and token
 player2 = Players.new
 
-
-p player1 , player2
-
-
+p player1.display, player2.display
