@@ -16,13 +16,13 @@ player2_token = player1_token == 'x' ? 'o' : 'x'
 puts "hello #{player2}, your token is #{player2_token}"
 # display the board
 def display_board
-    board = [[1, 2, 3], [4, 5, 6],[7, 8, 9]]
-    p board[0]
-    p board[1]
-    p board[2]
+  board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  p board[0]
+  p board[1]
+  p board[2]
 end
 # create a loop to take each player move
-puts "select a numberd position from the board"
+puts 'select a numberd position from the board'
 display_board
 game_over = false
 until game_over
@@ -36,7 +36,7 @@ until game_over
   display_board
   # check if the game is complete
   # return a winner
-  puts "Hurray, #{player1} you win"
+  
   # else
   # next
 
@@ -53,4 +53,5 @@ until game_over
   puts "Hurray, #{player2} you win"
   # else
   # next
+  game_over = true
 end
