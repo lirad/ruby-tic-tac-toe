@@ -1,52 +1,8 @@
 #!/usr/bin/env ruby
-
-class Players
-  @@token_array = %w[x X o O]
-  @@token = nil
-  @@name = {}
-
-  def initialize
-    player_name
-    player_position = @@name.length
-    player_token
-  end
-
-  def player_name
-    p 'Hey player, whats your name?'
-    name = gets.chomp
-    if @@name.length == 0 
-      
-    else 
-    
-    end   
-    @@name = name
-  end
-
-  def player_token
-    p "Hello #{@@name}, Please select a token X or O"
-    token = gets.chomp
-    return @@token = token if validate_token?(token)
-  end
-
-  def validate_token?(token = nil)
-    correct = false
-    return if correct == true
-    if @@token_array.any?(token)
-      @@token = token.capitalize
-      p "#{@@token}, Nice choice!"
-    else
-      p 'Invalid token, please choose X or O'
-      player_token
-    end  
-  end
-
-  def display
-    puts "#{@@name} and #{@@token} "
-  end
-end
+require "./lib/player.rb"
 # get player1 name and token
-player1 = Players.new
+player1 = Player.new("Player1", nil)
+player1.execute
 # get player2 name and token
-player2 = Players.new
-
-p player1.display, player2.display
+player2 = Player.new("Player2", player1.token)
+player2.execute
