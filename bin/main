@@ -21,28 +21,28 @@ def display_board
   p board[1]
   p board[2]
 end
-# create a loop to take each player move
+
 puts 'select a numberd position from the board'
 display_board
-
+# create a method to take each player move
 def player_turn(player)
   puts "#{player}, choose a position"
-player1_position = gets.chomp
-# check if the position is valid
-# confirm selected move
-puts "You selected position #{player1_position}."
-# display the board
-display_board
-# check if the game is complete
-# return a winner
-game_over = true
-# else
-# next
+  player1_position = gets.chomp
+  # check if the position is valid
+  # confirm selected move
+  puts "You selected position #{player1_position}."
+  # display the board
+  display_board
+  # check if the game is complete
+  # return a winner
+  # game_over = true
+  # else
+  # next
 end
 game_over = false
-until game_over 
+until game_over
   # get player 1 move
-  player_turn("player1")
+  player_turn('player1')
   # get player 2 move
-  player_turn("player2")
+  player_turn('player2')
 end
