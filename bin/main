@@ -24,33 +24,25 @@ end
 # create a loop to take each player move
 puts 'select a numberd position from the board'
 display_board
+
+def player_turn(player)
+  puts "#{player}, choose a position"
+player1_position = gets.chomp
+# check if the position is valid
+# confirm selected move
+puts "You selected position #{player1_position}."
+# display the board
+display_board
+# check if the game is complete
+# return a winner
+game_over = true
+# else
+# next
+end
 game_over = false
-until game_over
-  # Create a method that simulates the following loop, taking players turns
-  # get the player1 move
-  puts "#{player1}, choose a position"
-  player1_position = gets.chomp
-  # check if the position is valid
-  # confirm selected move
-  puts "You selected position #{player1_position}."
-  # display the board
-  display_board
-  # check if the game is complete
-  # return a winner
-  # else
-  # next
-  # get the player2 move
-  puts "#{player2}, choose a position"
-  player2_position = gets.chomp
-  # check if the position is valid
-  # confirm selected move
-  puts "You selected position #{player2_position}."
-  # display the board
-  display_board
-  # check if the game is complete
-  # return a winner
-  puts "Hurray, #{player2} you win"
-  # else
-  # next
-  game_over = true
+until game_over 
+  # get player 1 move
+  player_turn("player1")
+  # get player 2 move
+  player_turn("player2")
 end
