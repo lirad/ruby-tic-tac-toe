@@ -26,7 +26,7 @@ puts 'select a numberd position from the board'
 display_board
 game_over = false
 until game_over
-  #Create a method that simulates the following loop, taking players turns
+  # Create a method that simulates the following loop, taking players turns
   # get the player1 move
   puts "#{player1}, choose a position"
   player1_position = gets.chomp
