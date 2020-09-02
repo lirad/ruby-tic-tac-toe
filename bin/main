@@ -25,10 +25,10 @@ player1_token = player_token(player1_name)
 player1 = Players.new(player1_name, player1_token)
 
 player2_name = player_name
-player2_token = player1_token == 'X' ? 'O' : 'X'
+player2_token = player1_token == "X" ? "O" : "X"
 player2 = Players.new(player2_name, player2_token)
 
-players = [{name: player1.name, token: player1_token}, {name: player2.name, token: player2_token}]
+players = [{ name: player1.name, token: player1_token }, { name: player2.name, token: player2_token }]
 
 board = Board.new(players)
 
@@ -36,16 +36,17 @@ def get_player_move
   puts "Please select a number from the board:"
   select_number = gets.chomp.to_i
   return select_number
-end 
-
-select_number = get_player_move
-
-if board.position_validation?(select_number)
-  board.change_board(select_number)
-else   
-  get_player_move
 end
 
+while board.game_over == false
+  select_number = get_player_move
+  if board.position_validation?(select_number)
+    board.change_board(select_number)
+  else
+    puts "Invalid Number" 
+    get_player_move
+  end
+end
 
 
 # def change_board(token,player)
