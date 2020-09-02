@@ -29,17 +29,33 @@ require_relative("../lib/players.rb")
 
 
 $board_display = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+def get_player_move
+  puts "Please select a number from the board:"
+  select_number = gets.chomp.to_i - 1 
+  position_validation?(select_number) 
+  return select_number
+end  
+
 def change_board(token,player)
   # board_display.each { |n| p n }
   puts "It's #{player} turn."
-  puts "Please select a number from the board:"
-  select_number = gets.chomp.to_i - 1
+  get_player_move
   board_flatten = $board_display.flatten
   board_flatten[select_number] = token
   $board_display = board_flatten.each_slice(3).to_a
   $board_display.each { |n| p n }
 end
 
+def position_validation?(number)
+  board_flatten = $board_display.flatten 
+  if board_flatten.any?(number)
+    true
+  else   
+    p "Invalid position"
+    get_player_move
+  end 
+end  
 
 def game
   5.times do
