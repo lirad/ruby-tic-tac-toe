@@ -88,4 +88,3 @@ while game.game_over == false
     next
   end
 end
-game_over = false
