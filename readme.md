@@ -1,5 +1,24 @@
 # Ruby Tic-Tac-Toe
 
+## Game instructions
+
+Tic-Tac-Toe is a very popular game, which consists in making a sequence of three symbols in either a row, column or diagonal in a 3x3 board.
+
+To play the game follow the game installation steps mention below this file. After you done that, run the main file and follow these steps:
+
+1. Select the first player name - make sure it is bigger than 3 characters and smaller than 20 characters;
+2. The first player gets to chose which token it wants to use it can be either "O" or "X"
+3. Select the second player name following the instruction given on step 1;
+4. The second player will get a token assigned automatically;
+5. The game will begin. The Tic-Tac-Toe board will be printed and it will show numbers from 1 to 9;
+6. To win this game one player must make a sequence of three tokens either on lines, columns or diagonals;
+7. Choose the position where you want to place your first token, it must between 1 to 9;
+8. After that, this position will be taken and the second player will take this turn;
+9. The selected position can't be chosen twice;
+10. The game will take turns until a player wins or no more positions are available on the board, in this case it will be a draw!
+
+## Game construction
+
 This is a tic-tac-toe game built with ruby and oop princible 
     In this game there are 3 main files 
 
