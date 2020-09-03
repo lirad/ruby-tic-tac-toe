@@ -1,11 +1,13 @@
 class Players
   @@token_array = %w[x X o O]
-  attr_reader :name
-  attr_reader :token
+  attr_reader :name, :token
+  attr_accessor :player_moves 
+
 
   def initialize(name, token)
     @name = name
     @token = token
+    @player_moves = []
   end
 
   def self.validate_token?(token = nil)

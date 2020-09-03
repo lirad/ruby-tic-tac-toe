@@ -1,36 +1,33 @@
 #!/usr/bin/env ruby
 require_relative("../lib/players.rb")
-require_relative("../lib/board.rb")
-def validate_name(name, prev_player = nil)
+require_relative("../lib/game.rb")
+
+def validate_name?(name, prev_player = nil)
+  error_msg = "invalid name, player name must be unique and between 3-20 letters"
   if prev_player == nil
     if !name.empty? && name.length.between?(3,20)
       true
-    else false
+    else 
+      puts error_msg
+      false
     end
   elsif prev_player == "player1"
     if !name.empty? && name.length.between?(3,20) && name.capitalize != $player1_name
     true
-    else false
+    else 
+      puts error_msg
+      false
     end
   end
 end
+
 def player_name(player_name)
   p "Hey #{player_name}, whats your name?"
   name = gets.chomp
   if player_name == "player1"
-    if  validate_name(name)
-    name
-    else
-      puts "invalid name, player name must be unique and between 3-20 letters"
-      player_name(player_name)
-    end
+    validate_name?(name) ? name : player_name(player_name)
   elsif player_name == "player2"
-    if  validate_name(name,"player1")
-    name
-    else
-      puts "invalid name, player name must be unique and between 3-20 letters"
-      player_name(player_name)
-    end
+    validate_name?(name,"player1") ? name : player_name(player_name)
   end 
 end
 
@@ -38,7 +35,7 @@ def player_token(player_name)
   p "Hello #{player_name}, Please select a token X or O"
   token = gets.chomp
   if Players.validate_token?(token)
-    p "#{token.upcase!}, Nice choice!"
+    p "#{token.capitalize}, Nice choice!"
     return token.capitalize
   else
     p "Invalid token, please choose X or O"
@@ -57,18 +54,26 @@ player2 = Players.new(player2_name, player2_token)
 
 players = [{ name: player1.name, token: player1_token }, { name: player2.name, token: player2_token }]
 
-board = Board.new(players)
+game = Game.new(players)
 
 
 
   
-while board.game_over == false
-  current_player_turn = board.players[board.current_player][:name]
+while game.game_over == false
+  current_player_turn = game.players[game.current_player][:name]
   puts "#{current_player_turn} Please select a number from the board:"
   select_number = gets.chomp.to_i
-    if board.position_validation?(select_number)
-      board.change_board(select_number)
-      board.board_display.each { |n| p n }
+    if game.position_validation?(select_number)
+      game.change_board(select_number)
+      game.board_display.each { |n| p n }
+      if current_player_turn == player1.name 
+        player1.player_moves << select_number
+        game.game_over_conditions(player1.player_moves, player1.name )
+      else 
+        player2.player_moves << select_number
+        game.game_over_conditions(player2.player_moves, player2.name )
+      end
+      
     else
       puts "invalid position"
       next
