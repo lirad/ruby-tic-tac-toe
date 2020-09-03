@@ -1,8 +1,26 @@
 # Ruby Tic-Tac-Toe
 
+This is a tic-tac-toe game built with ruby and oop princible 
+    In this game there are 3 main files 
 
-This project is part of the Odin Project Ruby excercise. The goal is to create an Tic-Tac-Toe game using Ruby.
+    1- main.rb which is the file that's responsible for getting inputs from the user, outputing meesages and calling all the methods.
+    2- player.rb this is a liberary that's responsable of storing players variables such as (name, token).
+    3- game.rb which is responsible for the game methods, validations, comparisions and board manipulation.
 
+    ---------------------------------------------------------------------------------------------------------------------
+
+    In this project all the logic and manipulation is put in the files inside lib folder except for these that require consistant
+    outputs.
+
+    ---------------------------------------------------------------------------------------------------------------------
+
+    the game consists of 6 steps:
+    1- get players names and validate that they are unique (player1 name is different than player 2 name) and between 3-20 letters.
+    2- get player1 token and validate that it's either X or O.
+    3- set player2 token to the obesite value of player1's one.
+    4- display the board and ask for a move.
+    5- validating the given move that it's not already taken or that it's not between 1-9, this proccess runs for both players.
+    6- cecking for win condition untill the first player playes 5 moves, if any player wins it displayes it, else it displays "it's a draw".
 
 
 ## Built With
