@@ -6,7 +6,6 @@ class Game
     @board_display = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
     @game_over = false
     @current_player = 0
-    @players_moves = Hash.new
   end
 
   def switch_player
@@ -32,16 +31,15 @@ class Game
   end
 
   def game_over_conditions(player_moves, player_name)
-    win_condition = [[1, 2, 3], [2, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7], [1, 4, 7], [2, 5, 8], [3, 6, 9]]
-
-      win_condition.each do
-        |n|
-        if player_moves.sort.include?(n.sort)
-          puts "#{player_name} wins!!!! "
-          @game_over = true
-          break
+    
+    win_condition = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7], [1, 4, 7], [2, 5, 8], [3, 6, 9]]
+      win_condition.each do |n|
+        p check = (player_moves & n)
+        if check.length == 3
+          return "win"
+        elsif player_moves.length == 5
+          return "draw"
         end
       end
-
   end
 end
