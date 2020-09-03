@@ -1,2 +1,48 @@
 #!/usr/bin/env ruby
-puts 'Hello, world! '
+
+# get the player1 name
+puts 'Hey player1, whats your name?'
+player1 = gets.chomp
+puts "hello #{player1}, Please select a token (x / o)"
+# get the player1 token (x / o)
+player1_token = gets.chomp
+puts "#{player1_token}, Nice choice!"
+
+# get the player2 name
+puts 'Hey player2, whats your name?'
+player2 = gets.chomp
+# get the player2 token (x / o)
+player2_token = player1_token == 'x' ? 'o' : 'x'
+puts "hello #{player2}, your token is #{player2_token}"
+# display the board
+def display_board
+  board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+  p board[0]
+  p board[1]
+  p board[2]
+end
+
+puts 'select a numberd position from the board'
+display_board
+# create a method to take each player move
+def player_turn(player)
+  puts "#{player}, choose a position"
+  player1_position = gets.chomp
+  # check if the position is valid
+  # confirm selected move
+  puts "You selected position #{player1_position}."
+  # display the board
+  display_board
+  # check if the game is complete
+  # return a winner
+  # game_over = true
+  # else
+  # next
+end
+game_over = false
+until game_over
+  # get player 1 move
+  player_turn('player1')
+  # get player 2 move
+  player_turn('player2')
+end

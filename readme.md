@@ -1,6 +1,6 @@
-# Ruby Enumerables
+# Ruby Tic-Tac-Toe
 
-This project is part of the Odin Project Ruby excercise. The goal is to replicate the main Enumerables used in Ruby such as each, select, inject, map and, others.
+This project is part of the Odin Project Ruby excercise. The goal is to create a Tic-Tac-Toe game.
 
 
 ## Built With
