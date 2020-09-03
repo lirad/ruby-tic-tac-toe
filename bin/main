@@ -61,19 +61,19 @@ while game.game_over == false
   puts "#{current_player_turn} Please select a number from the board:"
   game.board_display.each { |n| p n }
   select_number = gets.chomp.to_i
-  if game.position_validation?(select_number)
-    game.change_board(select_number)
-    game.board_display.each { |n| p n }
-    def iterate(player,select_number,game)
-      player.player_moves << select_number
-      if game.game_over_conditions(player.player_moves) == 'win'
-        puts "#{player.name} wins!!!!!"
-        game.game_over = true
-      elsif game.game_over_conditions(player.player_moves) == 'draw'
-        puts "it's a draw!!"
-        game.game_over = true
-      end
+  next unless game.position_validation?(select_number)
+
+  game.change_board(select_number)
+  game.board_display.each { |n| p n }
+  def iterate(player, select_number, game)
+    player.player_moves << select_number
+    if game.game_over_conditions(player.player_moves) == 'win'
+      puts "#{player.name} wins!!!!!"
+      game.game_over = true
+    elsif game.game_over_conditions(player.player_moves) == 'draw'
+      puts "it's a draw!!"
+      game.game_over = true
     end
-    current_player_turn == player1.name ? iterate(player1,select_number,game) : iterate(player2,select_number,game)
   end
+  current_player_turn == player1.name ? iterate(player1, select_number, game) : iterate(player2, select_number, game)
 end
