@@ -1,6 +1,6 @@
 class Game
-  attr_accessor :board_display, :game_over, :current_player, :players, :win_condition
-
+  attr_accessor :game_over
+  attr_reader :board_display, :current_player, :players, :win_condition
   def initialize(players)
     @players = players
     @board_display = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]

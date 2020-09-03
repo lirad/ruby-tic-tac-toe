@@ -17,8 +17,4 @@ class Players
       false
     end
   end
-
-  def display
-    puts "#{@name} and #{@token}"
-  end
 end
