@@ -22,7 +22,15 @@ Style/Documentation:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
+Metrics/BlockNesting:
+  Enabled: false
+Style/GlobalVars:
+  Enabled: false
 Style/EachForSimpleLoop:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false
+Metrics/PerceivedComplexity:
   Enabled: false
 Style/AndOr:
   Enabled: false
