@@ -30,16 +30,17 @@ class Game
     end
   end
 
-  def game_over_conditions(player_moves, player_name)
-    
+  def game_over_conditions(player_moves)
     win_condition = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7], [1, 4, 7], [2, 5, 8], [3, 6, 9]]
-      win_condition.each do |n|
-        p check = (player_moves & n)
-        if check.length == 3
-          return "win"
-        elsif player_moves.length == 5
-          return "draw"
-        end
+
+    win_condition.each do |n|
+      check = (player_moves & n)
+      if check.length == 3
+        return "win"
       end
+    end
+    if player_moves.length == 5
+      return "draw"
+    end
   end
 end

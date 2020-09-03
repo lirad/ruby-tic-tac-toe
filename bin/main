@@ -58,34 +58,33 @@ game = Game.new(players)
 
 
 
-  
 while game.game_over == false
   current_player_turn = game.players[game.current_player][:name]
   puts "#{current_player_turn} Please select a number from the board:"
+  game.board_display.each { |n| p n }
   select_number = gets.chomp.to_i
     if game.position_validation?(select_number)
       game.change_board(select_number)
       game.board_display.each { |n| p n }
       if current_player_turn == player1.name 
         player1.player_moves << select_number
-        if game.game_over_conditions(player1.player_moves, player1.name ) == "win"
+        if game.game_over_conditions(player1.player_moves) == "win"
           puts "#{player1.name} wins!!!!!"
           game.game_over = true
-        elsif game.game_over_conditions(player1.player_moves, player1.name ) == "draw"
+        elsif game.game_over_conditions(player1.player_moves) == "draw"
           puts "it's a draw!!"
           game.game_over = true
         end
       else 
         player2.player_moves << select_number
-        if game.game_over_conditions(player2.player_moves, player2.name ) == "win"
+        if game.game_over_conditions(player2.player_moves ) == "win"
           puts "#{player2.name} wins!!!!!"
           game.game_over = true
-        elsif game.game_over_conditions(player2.player_moves, player2.name ) == "draw"
+        elsif game.game_over_conditions(player2.player_moves) == "draw"
           puts "it's a draw!!"
           game.game_over = true
         end
       end
-      
     else
       puts "invalid position"
       next
