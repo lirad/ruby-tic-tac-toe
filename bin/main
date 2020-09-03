@@ -77,4 +77,3 @@ while game.game_over == false
   end
   current_player_turn == player1.name ? iterate(player1, select_number, game) : iterate(player2, select_number, game)
 end
-
