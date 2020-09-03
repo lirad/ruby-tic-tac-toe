@@ -89,9 +89,3 @@ while game.game_over == false
   end
 end
 game_over = false
-until game_over
-  # get player 1 move
-  player_turn('player1')
-  # get player 2 move
-  player_turn('player2')
-end
