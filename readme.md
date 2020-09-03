@@ -1,17 +1,17 @@
-# Ruby Enumerables
+# Ruby Tic-Tac-Toe
 
-This project is part of the Odin Project Ruby excercise. The goal is to replicate the main Enumerables used in Ruby such as each, select, inject, map and, others.
+This project is part of the Odin Project Ruby excercise. The goal is to create an Tic-Tac-Toe game using Ruby.
 
 
 ## Built With
 
-- Rub
+- Ruby
 - VSCode
 - Rubocop
 
 ## Live Demo
 
-To quickly see our project in action, visit the [live demo](https://repl.it/@lirad/ruby-enumerable-methods) on repl.it.
+To quickly see our project in action, visit the [live demo](https://repl.it/join/recaiufz-lirad) on repl.it. Type bin/main to execute the program.
 
 ## Getting Started
 
@@ -26,24 +26,24 @@ To get this project up and running, you must already have ruby installed on your
 1. Open Terminal.
 2. Navigate to your desired location to download the contents of this repository.
 3. Copy and paste the following code into the Terminal:
-    git clone https://github.com/lirad/enumerables.git
+    git clone https://github.com/lirad/ruby-tic-tac-toe.git
 4. Hit enter.
 5. Once the repository has been cloned, navigate inside the repository and type:
-    ruby bubble_sort.rb
-    This will run the code, printing the output of our tests to the terminal.
-6. To change those tests, simply open enumerables.rb in a code editor and modify the values stored in the test_array and test_run variables.
-6. Enjoy sorted arrays of data for the rest of your life.
+    bin/main
+    This will run the game and you will be able to play it using the terminal.
+6. Have fun!
 
 ## Authors
 
-:bust_in_silhouette: **Diego lirad**
+👤 **Diego lirad**
 - Github: [@lirad](https://github.com/lirad)
 - LinkedIn: [@lirad](https://www.linkedin.com/in/diegoalira/)
 
-:bust_in_silhouette:**Akintoye Olamide**
-- Github: [@githubhandle](https://github.com/AkintoyeOlamide)
-- Twitter: [@twitterhandle](https://twitter.com/@toshactL)
-- Linkedin: [linkedin](https://www.linkedin.com/in/akintoye-olamide-baa80b1a4/)
+👤 **Mahmoud Mohammad**
+
+- Github: [@githubhandle](https://github.com/mahmoud717)
+- Twitter: [@twitterhandle](https://twitter.com/mahmoud26369406)
+
 ## :handshake: Contributing
 
 ## Show your support

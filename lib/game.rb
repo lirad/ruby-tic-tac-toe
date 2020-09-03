@@ -9,9 +9,9 @@ class Game
   end
 
   def switch_player
-    if @current_player == 1
-      @current_player = 0
-    else @current_player = 1     end
+    @current_player = if @current_player == 1
+                        0
+                      else 1 end
   end
 
   def change_board(select_number)
@@ -35,12 +35,8 @@ class Game
 
     win_condition.each do |n|
       check = (player_moves & n)
-      if check.length == 3
-        return "win"
-      end
+      return 'win' if check.length == 3
     end
-    if player_moves.length == 5
-      return "draw"
-    end
+    return 'draw' if player_moves.length == 5
   end
 end
