@@ -2,8 +2,9 @@ class Players
   attr_reader :name, :token
   attr_accessor :player_moves
 
+  @token_array = %w[x X o O]
+
   def initialize(name, token)
-    @token_array = %w[x X o O]
     @name = name
     @token = token
     @player_moves = []
