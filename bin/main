@@ -48,7 +48,7 @@ player1_token = player_token($player1_name)
 player1 = Players.new($player1_name, player1_token)
 
 player2_name = player_name('player2').capitalize
-player2_token = %w[x X].include?(player2_token) ? 'X' : 'O'
+player2_token = %w[x X].include?(player1_token) ? 'O' : 'X'
 puts "hey #{player2_name}, your token is #{player2_token.capitalize}."
 player2 = Players.new(player2_name, player2_token)
 
@@ -64,27 +64,16 @@ while game.game_over == false
   if game.position_validation?(select_number)
     game.change_board(select_number)
     game.board_display.each { |n| p n }
-    if current_player_turn == player1.name
-      player1.player_moves << select_number
-      if game.game_over_conditions(player1.player_moves) == 'win'
-        puts "#{player1.name} wins!!!!!"
+    def iterate(player,select_number,game)
+      player.player_moves << select_number
+      if game.game_over_conditions(player.player_moves) == 'win'
+        puts "#{player.name} wins!!!!!"
         game.game_over = true
-      elsif game.game_over_conditions(player1.player_moves) == 'draw'
-        puts "it's a draw!!"
-        game.game_over = true
-      end
-    else
-      player2.player_moves << select_number
-      if game.game_over_conditions(player2.player_moves) == 'win'
-        puts "#{player2.name} wins!!!!!"
-        game.game_over = true
-      elsif game.game_over_conditions(player2.player_moves) == 'draw'
+      elsif game.game_over_conditions(player.player_moves) == 'draw'
         puts "it's a draw!!"
         game.game_over = true
       end
     end
-  else
-    puts 'invalid position'
-    next
+    current_player_turn == player1.name ? iterate(player1,select_number,game) : iterate(player2,select_number,game)
   end
 end
