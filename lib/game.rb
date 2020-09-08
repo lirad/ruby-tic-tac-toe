@@ -19,6 +19,7 @@ class Game
     board_flatten[select_number - 1] = @players[@current_player][:token]
     @board_display = board_flatten.each_slice(3).to_a
     switch_player
+    @board_display
   end
 
   def position_validation?(number)
