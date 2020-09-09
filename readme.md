@@ -80,8 +80,6 @@ To get this project up and running, you must already have ruby installed on your
 
 ## Authors
 
-## Authors
-
 👤 **Diego lirad**
 - Github: [@lirad](https://github.com/lirad)
 - LinkedIn: [@lirad](https://www.linkedin.com/in/diegoalira/)
