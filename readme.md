@@ -72,6 +72,14 @@ To get this project up and running, you must already have ruby installed on your
     This will run the game and you will be able to play it using the terminal.
 6. Have fun!
 
+## Testing 
+**To run the tests for all public methods, follow these simple steps:**
+1- Install rspec by runing the following command "gem install rspec "
+2- Navigate to the "spec" folder by running the following command: "cd spec"
+3- Run "rspec"
+
+## Authors
+
 ## Authors
 
 👤 **Diego lirad**
