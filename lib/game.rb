@@ -1,6 +1,7 @@
 class Game
   attr_accessor :game_over
   attr_reader :board_display, :current_player, :players, :win_condition
+
   def initialize(players)
     @players = players
     @board_display = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
@@ -17,9 +18,8 @@ class Game
   def change_board(select_number)
     board_flatten = @board_display.flatten
     board_flatten[select_number - 1] = @players[@current_player][:token]
-    @board_display = board_flatten.each_slice(3).to_a
     switch_player
-    @board_display
+    @board_display = board_flatten.each_slice(3).to_a
   end
 
   def position_validation?(number)
@@ -33,7 +33,6 @@ class Game
 
   def game_over_conditions(player_moves)
     win_condition = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7], [1, 4, 7], [2, 5, 8], [3, 6, 9]]
-
     win_condition.each do |n|
       check = (player_moves & n)
       return 'win' if check.length == 3

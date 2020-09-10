@@ -1,5 +1,5 @@
 class Players
-  attr_reader :name, :token
+  attr_reader :name, :token, :token_array
   attr_accessor :player_moves
 
   @token_array = %w[x X o O]
