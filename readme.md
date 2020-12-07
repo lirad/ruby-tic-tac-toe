@@ -86,8 +86,8 @@ To get this project up and running, you must already have ruby installed on your
 
 👤 **Mahmoud Mohammad**
 
-- Github: [@githubhandle](https://github.com/mahmoud717)
-- Twitter: [@twitterhandle](https://twitter.com/mahmoud26369406)
+- Github: [@mahmoud717](https://github.com/mahmoud717)
+- Twitter: [@mahmoud717](https://twitter.com/mahmoud26369406)
 
 ## :handshake: Contributing
 
